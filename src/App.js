@@ -1,22 +1,21 @@
 import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { Amplify, API, graphqlOperation } from 'aws-amplify'
+import awsExports from './aws-exports';
+import config from './aws-exports';
+
+import { updateGame } from './graphql/mutations'
+import { listGames } from './graphql/queries'
+
 import './App.css';
+Amplify.configure(awsExports);
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Poker Feed</h1>
+        <p>Most recent game:</p>
       </header>
     </div>
   );

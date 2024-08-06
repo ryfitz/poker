@@ -1,0 +1,7 @@
+type Game @model {
+  id: Int!
+  date: String!
+  money: Int!
+  big: Int!
+  small: Int!
+}
